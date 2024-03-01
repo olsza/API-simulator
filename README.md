@@ -1,6 +1,9 @@
 # API Simulator
 
-API Simulator is a forthcoming project intended to facilitate the local simulation of real APIs without the need for an internet connection. Its primary goal is to empower developers to control responses and data through a planned panel.
+🇺🇸 API Simulator is a forthcoming project intended to facilitate the local simulation of real APIs without the need for an internet connection. Its primary goal is to empower developers to control responses and data through a planned panel.
+
+🇵🇱 API Simulator czyli symulator API to nadchodzący projekt mający na celu ułatwienie lokalnej symulacji prawdziwych interfejsów API bez konieczności połączenia z Internetem. Jego głównym celem jest umożliwienie programistom kontrolowania odpowiedzi i danych za pośrednictwem planowanego panelu.
+
 
 ## Project Description
 
