@@ -19,9 +19,11 @@ Projekt będzie zawierał planowany panel, w którym użytkownicy będą mogli s
 
 Plany na przyszłość dla tego projektu Open Source obejmują dodanie modułów do symulowania interfejsów API od różnych dostawców.
 
-## Contributing
+## 🇺🇸 Contributing / 🇵🇱 Wnieś swój wkład
 
-Contributions to APIs are anticipated and welcomed! Whether it involves adding new features, fixing bugs, or enhancing documentation, your contributions will enhance the project for all. Refer to the [contribution guidelines](CONTRIBUTING.md) for more information.
+🇺🇸 Contributions to APIs are anticipated and welcomed! Whether it involves adding new features, fixing bugs, or enhancing documentation, your contributions will enhance the project for all.
+
+🇵🇱 Wkład w projekt APIs jest mile widziany i oczekiwany! Niezależnie od tego, czy chodzi o dodawanie nowych funkcji, naprawianie błędów czy ulepszanie dokumentacji, Twój wkład poprawi projekt dla wszystkich.
 
 ## License
 
