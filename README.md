@@ -17,13 +17,6 @@ Future plans for this Open Source project include adding modules for simulating 
 - Compatibility with Docker for straightforward deployment and management.
 - Addition of modules for simulating APIs from different providers.
 
-## How to Use
-
-1. Clone the repository.
-2. Set up the environment using Docker.
-3. Upon the implementation of the panel, access it to configure API responses according to your testing needs.
-4. Commence simulating APIs locally without internet dependency.
-
 ## Contributing
 
 Contributions to APIs are anticipated and welcomed! Whether it involves adding new features, fixing bugs, or enhancing documentation, your contributions will enhance the project for all. Refer to the [contribution guidelines](CONTRIBUTING.md) for more information.
