@@ -25,6 +25,8 @@ Plany na przyszłość dla tego projektu Open Source obejmują dodanie modułów
 
 🇵🇱 Wkład w projekt APIs jest mile widziany i oczekiwany! Niezależnie od tego, czy chodzi o dodawanie nowych funkcji, naprawianie błędów czy ulepszanie dokumentacji, Twój wkład poprawi projekt dla wszystkich.
 
-## License
+## 🇺🇸 License / 🇵🇱 Licencja
 
-API Simulator is intended to be licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for details.
+🇺🇸 API Simulator is intended to be licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for details.
+
+🇵🇱 API Simulator jest na licencji MIT. Szczegółowe informacje można znaleźć w pliku [LICENSE](LICENSE).
