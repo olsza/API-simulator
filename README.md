@@ -17,6 +17,10 @@ Future plans for this Open Source project include adding modules for simulating 
 
 Projekt będzie zawierał planowany panel, w którym użytkownicy będą mogli skonfigurować pożądane odpowiedzi. Ta funkcjonalność umożliwi programistom definiowanie parametrów testowych, eliminując potrzebę łączenia się z serwerem testowym.
 
+APIs jest pisany w ramach wyzwania [100 commitów](https://100commitow.pl/) organizowany przez [DevMentors](https://github.com/devmentors).
+Dzięki uprzejmości [Domeny.Tv](https://domeny.tv) (jeden z wielu dostawców API komercyjnych, z którymi miałem przyjemność współpracować, a którzy według mnie mają najlepiej stworzoną dokumentację [API PL](https://www.domeny.tv/files/API2_dokumentacja.pdf)).
+Pierwszy moduł dla API Simulator będzie tworzony właśnie na podstawie ich dokumentacji.
+
 Plany na przyszłość dla tego projektu Open Source obejmują dodanie modułów do symulowania interfejsów API od różnych dostawców.
 
 [Lista do zrobienia (ToDo)](TODO.md)
