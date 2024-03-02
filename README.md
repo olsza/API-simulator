@@ -1,3 +1,7 @@
+<p align="center">
+<img src="logo-api-simulator.jpeg" alt="project logo" title="" style="width:200px; text-align: center" />
+</p>
+
 # API Simulator
 
 🇺🇸 API Simulator is a forthcoming project intended to facilitate the local simulation of real APIs without the need for an internet connection. Its primary goal is to empower developers to control responses and data through a planned panel.
