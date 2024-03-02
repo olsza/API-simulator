@@ -17,6 +17,8 @@ The first module for API Simulator will be created based on their documentation 
 
 Future plans for this Open Source project include adding modules for simulating APIs from various providers.
 
+[To Do List](TODO.md)
+
 🇵🇱 "API Simulator" (lub w skrócie APIs) zostanie stworzony jako rozwiązanie do lokalnego symulowania interfejsów API, bez konieczności korzystania z internetu. Podczas gdy niektóre firmy mogą oferować możliwość testowania swoich interfejsów API na serwerze testowym, wielu innych dostawców tego nie zapewniają. APIs będzie umożliwiać deweloperom symulowanie zachowania API lokalnie, a do jego wdrożenia można potencjalnie wykorzystać Docker.
 
 Projekt będzie zawierał planowany panel, w którym użytkownicy będą mogli skonfigurować pożądane odpowiedzi. Ta funkcjonalność umożliwi programistom definiowanie parametrów testowych, eliminując potrzebę łączenia się z serwerem testowym.
