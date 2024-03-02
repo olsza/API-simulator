@@ -19,6 +19,8 @@ Projekt będzie zawierał planowany panel, w którym użytkownicy będą mogli s
 
 Plany na przyszłość dla tego projektu Open Source obejmują dodanie modułów do symulowania interfejsów API od różnych dostawców.
 
+[Lista do zrobienia (ToDo)](TODO.md)
+
 ## 🇺🇸 Contributing / 🇵🇱 Wnieś swój wkład
 
 🇺🇸 Contributions to APIs are anticipated and welcomed! Whether it involves adding new features, fixing bugs, or enhancing documentation, your contributions will enhance the project for all.
