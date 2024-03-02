@@ -11,6 +11,10 @@
 
 The project will feature a planned panel where users can configure desired responses. This feature will empower developers to define parameters for testing purposes, eliminating the need to connect to a testing server.
 
+APIs is written as part of the [100 commits](https://100commitow.pl/) challenge organized by [DevMentors](https://github.com/devmentors).
+Courtesy of [Domeny.Tv (Domains)](https://domeny.tv) (one of the many commercial API vendors I've had the pleasure to work with, who in my opinion have the best produced [API EN](https://www.domeny.tv/files/API2_documentation.pdf) documentation).
+The first module for API Simulator will be created based on their documentation only.
+
 Future plans for this Open Source project include adding modules for simulating APIs from various providers.
 
 🇵🇱 "API Simulator" (lub w skrócie APIs) zostanie stworzony jako rozwiązanie do lokalnego symulowania interfejsów API, bez konieczności korzystania z internetu. Podczas gdy niektóre firmy mogą oferować możliwość testowania swoich interfejsów API na serwerze testowym, wielu innych dostawców tego nie zapewniają. APIs będzie umożliwiać deweloperom symulowanie zachowania API lokalnie, a do jego wdrożenia można potencjalnie wykorzystać Docker.
