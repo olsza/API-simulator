@@ -1,0 +1,19 @@
+{
+    "name": "olsza/api-simulator",
+    "description": "API Simulator is designed to simulate real APIs locally without requiring an Internet connection. Its main purpose is to allow developers to control responses and data through a panel.",
+    "type": "project",
+    "require": {
+        "laravel/laravel": "10.x-dev"
+    },
+    "require-dev": {
+        "laravel/sail": "1.x-dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Olsza",
+            "email": "olsza@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
