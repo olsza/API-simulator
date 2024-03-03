@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "olsza/api-simulator",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "API Simulator is designed to simulate real APIs locally without requiring an Internet connection. Its main purpose is to allow developers to control responses and data through a panel.",
+    "keywords": ["API", "simulator","API simulator","APIs" ,"laravel", "olsza"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
