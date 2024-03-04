@@ -1,5 +1,5 @@
 <p align="center">
-<img src="logo-api-simulator.jpeg" alt="project logo" title="" style="width:200px; text-align: center" />
+<img src="logo-api-simulator.jpeg" alt="project logo" title="API simulator project logo generated with Microsoft Copilot" style="width:200px; text-align: center" />
 </p>
 
 # API Simulator
