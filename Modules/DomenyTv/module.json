@@ -1,0 +1,11 @@
+{
+    "name": "DomenyTv",
+    "alias": "domenytv",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\DomenyTv\\App\\Providers\\DomenyTvServiceProvider"
+    ],
+    "files": []
+}

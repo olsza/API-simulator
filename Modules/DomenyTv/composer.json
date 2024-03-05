@@ -1,0 +1,31 @@
+{
+    "name": "olsza/domenytv",
+    "description": "",
+    "authors": [
+        {
+            "name": "Olsza",
+            "email": "olsza@users.noreply.github.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\DomenyTv\\": "",
+            "Modules\\DomenyTv\\App\\": "app/",
+            "Modules\\DomenyTv\\Database\\Factories\\": "database/factories/",
+            "Modules\\DomenyTv\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\DomenyTv\\Tests\\": "tests/"
+        }
+    }
+}
