@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Modules\DomenyTv\App\Http\Controllers\AccountBalanceController;
 
 /*
     |--------------------------------------------------------------------------
@@ -14,6 +15,6 @@ use Illuminate\Support\Facades\Route;
     |
 */
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->name('api.')->group(function () {
-    Route::get('domenytv', fn (Request $request) => $request->user())->name('domenytv');
+Route::middleware([])->name('api.')->group(function () {
+    Route::get('domenytv', 'AccountBalanceController@index')->name('domenytv');
 });
