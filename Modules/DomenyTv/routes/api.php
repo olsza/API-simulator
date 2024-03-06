@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
     |
 */
 
-Route::middleware(['auth:sanctum'])->name('api.')->group(function () {
+Route::middleware([])->name('api.')->group(function () {
     Route::get('domenytv', fn (Request $request) => $request->user())->name('domenytv');
 });
