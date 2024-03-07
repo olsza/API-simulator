@@ -15,5 +15,5 @@ use Modules\DomenyTv\App\Http\Controllers\AccountBalanceController;
     |
 */
 
-Route::get('domenytv', 'AccountBalanceController@index')->name('api.domenytv');
+Route::get('domenytv', 'DomenyTvController@index')->name('api.domenytv');
 
