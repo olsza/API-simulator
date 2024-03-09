@@ -7,6 +7,9 @@
             "email": "olsza@users.noreply.github.com"
         }
     ],
+    "require": {
+        "artisaninweb/laravel-soap": "dev-master"
+    },
     "extra": {
         "laravel": {
             "providers": [],
