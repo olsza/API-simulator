@@ -18,7 +18,7 @@ class AccountBalanceTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function checkDomenyTv(): void
+    public function testCheckDomenyTv(): void
     {
         $response = $this->get(route('api.domenytv'));
 
