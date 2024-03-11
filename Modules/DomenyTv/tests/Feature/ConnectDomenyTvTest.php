@@ -17,4 +17,11 @@ class ConnectDomenyTvTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testDomenyTvModule()
+    {
+        $response = $this->get(route('api.domenytv'));
+
+        $response->assertStatus(200);
+    }
 }
