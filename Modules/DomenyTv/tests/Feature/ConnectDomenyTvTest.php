@@ -11,7 +11,7 @@ class ConnectDomenyTvTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function testExampleDomenyTvModule(): void
+    public function testExample(): void
     {
         $response = $this->get('/');
 
