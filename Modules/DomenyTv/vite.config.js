@@ -6,6 +6,13 @@ export default defineConfig({
         outDir: '../../public/build-domenytv',
         emptyOutDir: true,
         manifest: true,
+        rollupOptions: {
+            output: {
+                copy: [
+                    { src: __dirname + '/soap.wdl.xml', dest: '../../public' }
+                ]
+            }
+        }
     },
     plugins: [
         laravel({
