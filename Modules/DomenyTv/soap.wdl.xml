@@ -1,0 +1,1776 @@
+<definitions xmlns:tns="urn:domenytv" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="Domenytv" targetNamespace="urn:domenytv">
+    <types>
+        <!-- <xsd:schema targetNamespace='urn:domenytv' xmlns:xsd='http://www.w3.org/2001/XMLSchema'> -->
+        <xsd:element name="checkDomainParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="checkDomainReactivationRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getDomainDNSRecordsReqParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="deleteRedirectionServerParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="activateRedirectionServerParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="checkRedirectionParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="activateParkingParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="simpleResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="checkDomainResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="price" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="premium" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="checkDomainReactivationResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="price" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="canReactivate" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="transferDomainParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="authinfo" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="resend" type="xsd:integer" minOccurs="0" nillable="true"/>
+                    <xsd:element name="renew" type="xsd:integer" minOccurs="0" nillable="true"/>
+                    <xsd:element name="contact" type="tns:registrant" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="transferFutureParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="authinfo" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="domainInfoParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="authinfo" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="contactInfoParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="domainInfoResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="crDate" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="exDate" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="renDate" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="status" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="registrant" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="technical" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="ns" type="tns:nameServers" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="contactInfoResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="name" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="org" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="address" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="city" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="zip" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="country" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="phone" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="email" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="ctype" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="cpubl" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:complexType name="nameServers">
+            <xsd:sequence>
+                <xsd:element name="NameServer1" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer2" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer3" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer4" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer5" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer6" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer7" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer8" minOccurs="0" nillable="true" type="xsd:string"/>
+                <xsd:element name="NameServer9" minOccurs="0" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:element name="hostCreateParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="host" type="xsd:string"/>
+                    <xsd:element name="ip" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="ipv6" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="hostUpdateParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="host" type="xsd:string"/>
+                    <xsd:element name="ip" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="ipv6" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="foreignHostCreateParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="host" type="xsd:string"/>
+                    <xsd:element name="ip" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="hostInfoParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="host" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="hostInfoResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="status" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="ip" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="crDate" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="registerDomainParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="dns" type="tns:nameServers"/>
+                    <xsd:element name="registrant" type="tns:registrant"/>
+                    <xsd:element name="period" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="contactUpdateParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="registrant" type="tns:updatedregistrant"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:complexType name="registrant">
+            <xsd:sequence>
+                <xsd:element name="companyName" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="firstName" type="xsd:string"/>
+                <xsd:element name="lastName" type="xsd:string"/>
+                <xsd:element name="address" type="xsd:string"/>
+                <xsd:element name="zip" type="xsd:string"/>
+                <xsd:element name="district" type="xsd:string"/>
+                <xsd:element name="city" type="xsd:string"/>
+                <xsd:element name="country" type="xsd:string"/>
+                <xsd:element name="phone" type="xsd:string"/>
+                <xsd:element name="idNumber" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="email" type="xsd:string"/>
+                <xsd:element name="passNumber" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="dob" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="placeOfBirth" type="xsd:string" minOccurs="0" nillable="true"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="updatedregistrant">
+            <xsd:sequence>
+                <xsd:element name="address" type="xsd:string"/>
+                <xsd:element name="zip" type="xsd:string"/>
+                <xsd:element name="district" type="xsd:string"/>
+                <xsd:element name="city" type="xsd:string"/>
+                <xsd:element name="country" type="xsd:string"/>
+                <xsd:element name="phone" type="xsd:string"/>
+                <xsd:element name="email" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="DNSrecords">
+            <xsd:sequence>
+                <xsd:element name="type" type="xsd:string"/>
+                <xsd:element name="subdomain" type="xsd:string"/>
+                <xsd:element name="value" type="xsd:string"/>
+                <xsd:element name="priority" type="xsd:string" minOccurs="0" nillable="true"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="promosParams">
+            <xsd:sequence>
+                <xsd:element name="value" type="xsd:integer"/>
+                <xsd:element name="domains" type="xsd:string"/>
+                <xsd:element name="valid_from" type="xsd:string"/>
+                <xsd:element name="valid_to" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:element name="changeDomainNameserversParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="dns" type="tns:nameServers"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="domainCessionParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="registrant" type="tns:registrant"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="domainRenewParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="period" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="idProtectRenewParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="period" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="idProtectPurchaseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="period" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="accountBalanceParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getAllDomainsParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="accountBalanceResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="balance" type="xsd:float"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="lastOperationsParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="limit" type="xsd:integer" minOccurs="0" nillable="true"/>
+                    <xsd:element name="from" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="to" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="lastOperationsResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="operations" type="tns:operations"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="transfersListResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="transfers" type="tns:transfers"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:complexType name="operations">
+            <xsd:sequence>
+                <xsd:element name="date" type="xsd:string"/>
+                <xsd:element name="cost" type="xsd:float"/>
+                <xsd:element name="balance" type="xsd:float"/>
+                <xsd:element name="domain_name" type="xsd:string"/>
+                <xsd:element name="domain_ext" type="xsd:string"/>
+                <xsd:element name="type" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="transfers">
+            <xsd:sequence>
+                <xsd:element name="domain_name" type="xsd:string"/>
+                <xsd:element name="domain_ext" type="xsd:string"/>
+                <xsd:element name="cre_date" type="xsd:string"/>
+                <xsd:element name="status" type="xsd:integer"/>
+                <xsd:element name="email" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:element name="domainAuthinfoParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="futureGetAuthinfoParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="domainAuthinfoResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="authinfo" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="futureCheckParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="idProtectDisableParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="idProtectEnableParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="registrarLockRemoveParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="registrarLockSetParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="registrarLockCheckParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="futureInfoParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="idProtectCheckStatusParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="futureInfoResult">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="crDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+                    <xsd:element name="exDate" type="xsd:dateTime" minOccurs="0" nillable="true"/>
+                    <xsd:element name="registrant" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="futureCreateParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="registrant" type="tns:registrant"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="checkRedirectionServerParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="type" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getDomainDNSRecordsParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="records" type="tns:DNSrecords"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="setDomainDNSRecordsParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="records" type="tns:DNSrecords"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="setDomainDNSRecordsResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="subdomain" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="type" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="message" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getAllDomainsResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="domains" type="tns:getAllDomainsDomainsParams"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getPriceRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="ext" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="sslVerifyOrderRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="period" type="xsd:integer"/>
+                    <xsd:element name="product" type="xsd:string"/>
+                    <xsd:element name="csr" type="xsd:string"/>
+                    <xsd:element name="first_name" type="xsd:string"/>
+                    <xsd:element name="last_name" type="xsd:string"/>
+                    <xsd:element name="phone" type="xsd:string"/>
+                    <xsd:element name="email" type="xsd:string"/>
+                    <xsd:element name="admin_email" type="xsd:string"/>
+                    <xsd:element name="company" type="xsd:string"/>
+                    <xsd:element name="address" type="xsd:string"/>
+                    <xsd:element name="city" type="xsd:string"/>
+                    <xsd:element name="district" type="xsd:string"/>
+                    <xsd:element name="zip" type="xsd:string"/>
+                    <xsd:element name="country" type="xsd:string"/>
+                    <xsd:element name="language" type="xsd:string"/>
+                    <xsd:element name="nip" type="xsd:string"/>
+                    <xsd:element name="HTTPvalidation" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="sslCheckOrderParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="order_id" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="pricelistParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="disablePromoPrices" type="xsd:string" minOccurs="0" nillable="true"/>
+                    <xsd:element name="showRetailPrices" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="transfersListRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getCurrentPromosParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="sslCheckOrderResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="status1" type="xsd:string"/>
+                    <xsd:element name="status2" type="xsd:string"/>
+                    <xsd:element name="certificate" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getPriceResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="prices" type="tns:priceParams"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getCurrentPromosResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="promos" type="tns:promosParams"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="pricelistResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="domains" type="tns:priceDomainsParams"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="registrarLockParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="hasLock" type="xsd:boolean" minOccurs="0" nillable="true"/>
+                    <xsd:element name="isLockable" type="xsd:boolean" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="idProtectCheckResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="enabled" type="xsd:boolean" minOccurs="0" nillable="true"/>
+                    <xsd:element name="exp_date" type="xsd:string" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:complexType name="priceParams">
+            <xsd:sequence>
+                <xsd:element name="registration" type="xsd:string"/>
+                <xsd:element name="renewal" type="xsd:string"/>
+                <xsd:element name="cession" type="xsd:string"/>
+                <xsd:element name="transfer" type="xsd:string"/>
+                <xsd:element name="reactivation" type="xsd:string"/>
+                <xsd:element name="reactivation_max_days" type="xsd:integer" nillable="true"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="priceDomainsParams">
+            <xsd:sequence>
+                <xsd:element name="ext" type="xsd:string"/>
+                <xsd:element name="reg_price" type="xsd:string"/>
+                <xsd:element name="ren_price" type="xsd:string"/>
+                <xsd:element name="tra_price" type="xsd:string"/>
+                <xsd:element name="trd_price" type="xsd:string"/>
+                <xsd:element name="rea_price" type="xsd:string"/>
+                <xsd:element name="dns_price" type="xsd:string"/>
+                <xsd:element name="idprotect" type="xsd:string"/>
+                <xsd:element name="idp_price" type="xsd:string"/>
+                <xsd:element name="renew_offset" type="xsd:string"/>
+                <xsd:element name="min_reg_period" type="xsd:string"/>
+                <xsd:element name="tra_renew" type="xsd:string"/>
+                <xsd:element name="tra_authinfo" type="xsd:string"/>
+                <xsd:element name="trd_renew" type="xsd:string"/>
+                <xsd:element name="reactivation_max_days" type="xsd:integer" nillable="true"/>
+                <xsd:element name="require_identity_number" type="xsd:string"/>
+                <xsd:element name="require_date_of_birth" type="xsd:string"/>
+                <xsd:element name="require_place_of_birth" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="getAllDomainsDomainsParams">
+            <xsd:sequence>
+                <xsd:element name="domain_name" type="xsd:string"/>
+                <xsd:element name="domain_ext" type="xsd:string"/>
+                <xsd:element name="create_date" type="xsd:string"/>
+                <xsd:element name="renew_date" type="xsd:string"/>
+                <xsd:element name="exp_date" type="xsd:string"/>
+                <xsd:element name="dns1" type="xsd:string"/>
+                <xsd:element name="dns2" type="xsd:string"/>
+                <xsd:element name="dns3" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="dns4" type="xsd:string" minOccurs="0" nillable="true"/>
+                <xsd:element name="dns5" type="xsd:string" minOccurs="0" nillable="true"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:element name="checkRAAResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="suspended" type="xsd:boolean" minOccurs="0" nillable="true"/>
+                    <xsd:element name="verified" type="xsd:boolean" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getDNSSECrecordsRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="getDNSSECrecordsResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="DNSSECrecords" type="tns:DNSSECrecord"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="addDNSSECrecordRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="record" type="xsd:DNSSECrecord"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="addDNSSECrecordResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="removeDNSSECrecordRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="domain" type="xsd:string"/>
+                    <xsd:element name="record" type="xsd:DNSSECrecord"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="removeDNSSECrecordResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="pollRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="type" type="xsd:string"/>
+                    <xsd:element name="id" type="xsd:integer" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="pollResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="messages" type="xsd:pollMessage" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="checkDomainOrderStatusRequestParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="login" type="xsd:string"/>
+                    <xsd:element name="password" type="xsd:string"/>
+                    <xsd:element name="order_id" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="checkDomainOrderStatusResponseParams">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:integer"/>
+                    <xsd:element name="status" type="xsd:integer" minOccurs="0" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:complexType name="pollMessage">
+            <xsd:sequence>
+                <xsd:element name="date" type="xsd:string"/>
+                <xsd:element name="id" type="xsd:integer"/>
+                <xsd:element name="domain" type="xsd:string"/>
+                <xsd:element name="event" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType name="DNSSECrecord">
+            <xsd:sequence>
+                <xsd:element name="KeyTag" type="xsd:integer"/>
+                <xsd:element name="DigestType" type="xsd:integer"/>
+                <xsd:element name="Alg" type="xsd:integer"/>
+                <xsd:element name="Digest" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+        <!-- </xsd:schema> -->
+    </types>
+    <message name="checkDomainRequest">
+        <part name="args" element="tns:checkDomainParams"/>
+    </message>
+    <message name="getDomainDNSRecordsRequest">
+        <part name="args" element="tns:getDomainDNSRecordsReqParams"/>
+    </message>
+    <message name="deleteRedirectionServerRequest">
+        <part name="args" element="tns:deleteRedirectionServerParams"/>
+    </message>
+    <message name="activateRedirectionServerRequest">
+        <part name="args" element="tns:activateRedirectionServerParams"/>
+    </message>
+    <message name="activateParkingRequest">
+        <part name="args" element="tns:activateParkingParams"/>
+    </message>
+    <message name="checkRedirectionRequest">
+        <part name="args" element="tns:checkRedirectionParams"/>
+    </message>
+    <message name="simpleResponse">
+        <part name="result" element="tns:simpleResult"/>
+    </message>
+    <message name="checkDomainResponse">
+        <part name="result" element="tns:checkDomainResult"/>
+    </message>
+    <message name="transferDomainRequest">
+        <part name="args" element="tns:transferDomainParams"/>
+    </message>
+    <message name="transferDomainResponse">
+        <part name="result" element="tns:simpleResult"/>
+    </message>
+    <message name="transferFutureRequest">
+        <part name="args" element="tns:transferFutureParams"/>
+    </message>
+    <message name="transferFutureResponse">
+        <part name="result" element="tns:simpleResult"/>
+    </message>
+    <message name="domainInfoRequest">
+        <part name="args" element="tns:domainInfoParams"/>
+    </message>
+    <message name="contactInfoRequest">
+        <part name="args" element="tns:contactInfoParams"/>
+    </message>
+    <message name="domainInfoResponse">
+        <part name="result" element="tns:domainInfoResult"/>
+    </message>
+    <message name="contactInfoResponse">
+        <part name="result" element="tns:contactInfoResult"/>
+    </message>
+    <message name="hostCreateRequest">
+        <part name="args" element="tns:hostCreateParams"/>
+    </message>
+    <message name="foreignHostCreateRequest">
+        <part name="args" element="tns:foreignHostCreateParams"/>
+    </message>
+    <message name="hostinfoRequest">
+        <part name="args" element="tns:hostInfoParams"/>
+    </message>
+    <message name="hostInfoResponse">
+        <part name="result" element="tns:hostInfoResult"/>
+    </message>
+    <message name="hostUpdateRequest">
+        <part name="args" element="tns:hostUpdateParams"/>
+    </message>
+    <message name="registerDomainRequest">
+        <part name="args" element="tns:registerDomainParams"/>
+    </message>
+    <message name="contactUpdateRequest">
+        <part name="args" element="tns:contactUpdateParams"/>
+    </message>
+    <message name="changeDomainNameserversRequest">
+        <part name="args" element="tns:changeDomainNameserversParams"/>
+    </message>
+    <message name="domainCessionRequest">
+        <part name="args" element="tns:domainCessionParams"/>
+    </message>
+    <message name="domainRenewRequest">
+        <part name="args" element="tns:domainRenewParams"/>
+    </message>
+    <message name="idProtectRenewRequest">
+        <part name="args" element="tns:idProtectRenewParams"/>
+    </message>
+    <message name="idProtectPurchaseRequest">
+        <part name="args" element="tns:idProtectPurchaseParams"/>
+    </message>
+    <message name="accountBalanceRequest">
+        <part name="args" element="tns:accountBalanceParams"/>
+    </message>
+    <message name="getAllDomainsRequest">
+        <part name="args" element="tns:getAllDomainsParams"/>
+    </message>
+    <message name="accountBalanceResponse">
+        <part name="result" element="tns:accountBalanceResult"/>
+    </message>
+    <message name="lastOperationsRequest">
+        <part name="args" element="tns:lastOperationsParams"/>
+    </message>
+    <message name="lastOperationsResponse">
+        <part name="result" element="tns:lastOperationsResult"/>
+    </message>
+    <message name="domainAuthinfoRequest">
+        <part name="args" element="tns:domainAuthinfoParams"/>
+    </message>
+    <message name="futureGetAuthinfoRequest">
+        <part name="args" element="tns:futureGetAuthinfoParams"/>
+    </message>
+    <message name="domainAuthinfoResponse">
+        <part name="result" element="tns:domainAuthinfoResult"/>
+    </message>
+    <message name="futureCheckRequest">
+        <part name="args" element="tns:futureCheckParams"/>
+    </message>
+    <message name="idProtectDisableRequest">
+        <part name="args" element="tns:idProtectDisableParams"/>
+    </message>
+    <message name="idProtectEnableRequest">
+        <part name="args" element="tns:idProtectEnableParams"/>
+    </message>
+    <message name="registrarLockRemoveRequest">
+        <part name="args" element="tns:registrarLockRemoveParams"/>
+    </message>
+    <message name="registrarLockSetRequest">
+        <part name="args" element="tns:registrarLockSetParams"/>
+    </message>
+    <message name="registrarLockCheckRequest">
+        <part name="args" element="tns:registrarLockCheckParams"/>
+    </message>
+    <message name="idProtectCheckStatusRequest">
+        <part name="args" element="tns:idProtectCheckStatusParams"/>
+    </message>
+    <message name="futureInfoRequest">
+        <part name="args" element="tns:futureInfoParams"/>
+    </message>
+    <message name="futureInfoResponse">
+        <part name="result" element="tns:futureInfoResult"/>
+    </message>
+    <message name="futureCreateRequest">
+        <part name="args" element="tns:futureCreateParams"/>
+    </message>
+    <message name="checkRedirectionServerResponse">
+        <part name="args" element="tns:checkRedirectionServerParams"/>
+    </message>
+    <message name="getDomainDNSRecordsResponse">
+        <part name="args" element="tns:getDomainDNSRecordsParams"/>
+    </message>
+    <message name="setDomainDNSRecordsRequest">
+        <part name="args" element="tns:setDomainDNSRecordsParams"/>
+    </message>
+    <message name="setDomainDNSRecordsResponse">
+        <part name="args" element="tns:setDomainDNSRecordsResponseParams"/>
+    </message>
+    <message name="getAllDomainsResponse">
+        <part name="args" element="tns:getAllDomainsResponseParams"/>
+    </message>
+    <message name="getPriceResponse">
+        <part name="args" element="tns:getPriceResponseParams"/>
+    </message>
+    <message name="getPriceRequest">
+        <part name="args" element="tns:getPriceRequestParams"/>
+    </message>
+    <message name="registrarLockResponse">
+        <part name="args" element="tns:registrarLockParams"/>
+    </message>
+    <message name="idProtectCheckResponse">
+        <part name="args" element="tns:idProtectCheckResponseParams"/>
+    </message>
+    <message name="sslVerifyOrderRequest">
+        <part name="args" element="tns:sslVerifyOrderRequestParams"/>
+    </message>
+    <message name="sslCheckOrderRequest">
+        <part name="args" element="tns:sslCheckOrderParams"/>
+    </message>
+    <message name="sslCheckOrderResponse">
+        <part name="args" element="tns:sslCheckOrderResponseParams"/>
+    </message>
+    <message name="pricelistRequest">
+        <part name="args" element="tns:pricelistParams"/>
+    </message>
+    <message name="pricelistResponse">
+        <part name="args" element="tns:pricelistResponseParams"/>
+    </message>
+    <message name="getCurrentPromosRequest">
+        <part name="args" element="tns:getCurrentPromosParams"/>
+    </message>
+    <message name="getCurrentPromosResponse">
+        <part name="args" element="tns:getCurrentPromosResponseParams"/>
+    </message>
+    <message name="checkRAAResponse">
+        <part name="args" element="tns:checkRAAResponseParams"/>
+    </message>
+    <message name="transfersListRequest">
+        <part name="args" element="tns:transfersListRequestParams"/>
+    </message>
+    <message name="transfersListResponse">
+        <part name="args" element="tns:transfersListResponseParams"/>
+    </message>
+    <message name="getDNSSECrecordsRequest">
+        <part name="args" element="tns:getDNSSECrecordsRequestParams"/>
+    </message>
+    <message name="getDNSSECrecordsResponse">
+        <part name="args" element="tns:getDNSSECrecordsResponseParams"/>
+    </message>
+    <message name="addDNSSECrecordRequest">
+        <part name="args" element="tns:addDNSSECrecordRequestParams"/>
+    </message>
+    <message name="addDNSSECrecordResponse">
+        <part name="args" element="tns:addDNSSECrecordResponseParams"/>
+    </message>
+    <message name="removeDNSSECrecordRequest">
+        <part name="args" element="tns:removeDNSSECrecordRequestParams"/>
+    </message>
+    <message name="removeDNSSECrecordResponse">
+        <part name="args" element="tns:removeDNSSECrecordResponseParams"/>
+    </message>
+    <message name="checkDomainReactivationRequest">
+        <part name="args" element="tns:checkDomainReactivationRequestParams"/>
+    </message>
+    <message name="checkDomainReactivationResponse">
+        <part name="args" element="tns:checkDomainReactivationResponseParams"/>
+    </message>
+    <message name="pollRequest">
+        <part name="args" element="tns:pollRequestParams"/>
+    </message>
+    <message name="pollResponse">
+        <part name="args" element="tns:pollResponseParams"/>
+    </message>
+    <message name="checkDomainOrderStatusRequest">
+        <part name="args" element="tns:checkDomainOrderStatusRequestParams"/>
+    </message>
+    <message name="checkDomainOrderStatusResponse">
+        <part name="args" element="tns:checkDomainOrderStatusResponseParams"/>
+    </message>
+    <portType name="DTVPortType">
+        <operation name="checkDomain">
+            <input message="tns:checkDomainRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="checkDomainExtended">
+            <input message="tns:checkDomainRequest"/>
+            <output message="tns:checkDomainResponse"/>
+        </operation>
+        <operation name="transferDomain">
+            <input message="tns:transferDomainRequest"/>
+            <output message="tns:transferDomainResponse"/>
+        </operation>
+        <operation name="transferFuture">
+            <input message="tns:transferFutureRequest"/>
+            <output message="tns:transferFutureResponse"/>
+        </operation>
+        <operation name="domainInfo">
+            <input message="tns:domainInfoRequest"/>
+            <output message="tns:domainInfoResponse"/>
+        </operation>
+        <operation name="contactInfo">
+            <input message="tns:contactInfoRequest"/>
+            <output message="tns:contactInfoResponse"/>
+        </operation>
+        <operation name="hostCreate">
+            <input message="tns:hostCreateRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="foreignHostCreate">
+            <input message="tns:foreignHostCreateRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="hostInfo">
+            <input message="tns:hostinfoRequest"/>
+            <output message="tns:hostInfoResponse"/>
+        </operation>
+        <operation name="hostUpdate">
+            <input message="tns:hostUpdateRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="registerDomain">
+            <input message="tns:registerDomainRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="contactUpdate">
+            <input message="tns:contactUpdateRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="changeDomainNameservers">
+            <input message="tns:changeDomainNameserversRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="domainCession">
+            <input message="tns:domainCessionRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="domainRenew">
+            <input message="tns:domainRenewRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="accountBalance">
+            <input message="tns:accountBalanceRequest"/>
+            <output message="tns:accountBalanceResponse"/>
+        </operation>
+        <operation name="lastOperations">
+            <input message="tns:lastOperationsRequest"/>
+            <output message="tns:lastOperationsResponse"/>
+        </operation>
+        <operation name="domainGetAuthinfo">
+            <input message="tns:domainAuthinfoRequest"/>
+            <output message="tns:domainAuthinfoResponse"/>
+        </operation>
+        <operation name="futureGetAuthinfo">
+            <input message="tns:futureGetAuthinfoRequest"/>
+            <output message="tns:domainAuthinfoResponse"/>
+        </operation>
+        <operation name="futureCheck">
+            <input message="tns:futureCheckRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="futureInfo">
+            <input message="tns:futureInfoRequest"/>
+            <output message="tns:futureInfoResponse"/>
+        </operation>
+        <operation name="futureCreate">
+            <input message="tns:futureCreateRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="checkRedirectionServer">
+            <input message="tns:checkRedirectionRequest"/>
+            <output message="tns:checkRedirectionServerResponse"/>
+        </operation>
+        <operation name="activateRedirectionServer">
+            <input message="tns:activateRedirectionServerRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="activateParking">
+            <input message="tns:activateParkingRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="deleteRedirectionServer">
+            <input message="tns:deleteRedirectionServerRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="getDomainDNSRecords">
+            <input message="tns:getDomainDNSRecordsRequest"/>
+            <output message="tns:getDomainDNSRecordsResponse"/>
+        </operation>
+        <operation name="setDomainDNSRecords">
+            <input message="tns:setDomainDNSRecordsRequest"/>
+            <output message="tns:setDomainDNSRecordsResponse"/>
+        </operation>
+        <operation name="getAllDomains">
+            <input message="tns:getAllDomainsRequest"/>
+            <output message="tns:getAllDomainsResponse"/>
+        </operation>
+        <operation name="getPrice">
+            <input message="tns:getPriceRequest"/>
+            <output message="tns:getPriceResponse"/>
+        </operation>
+        <operation name="idProtectPurchase">
+            <input message="tns:idProtectPurchaseRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="idProtectRenew">
+            <input message="tns:idProtectRenewRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="registrarLockCheck">
+            <input message="tns:registrarLockCheckRequest"/>
+            <output message="tns:registrarLockResponse"/>
+        </operation>
+        <operation name="registrarLockSet">
+            <input message="tns:registrarLockSetRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="registrarLockRemove">
+            <input message="tns:registrarLockRemoveRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="idProtectCheckStatus">
+            <input message="tns:idProtectCheckStatusRequest"/>
+            <output message="tns:idProtectCheckResponse"/>
+        </operation>
+        <operation name="idProtectEnable">
+            <input message="tns:idProtectEnableRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="idProtectDisable">
+            <input message="tns:idProtectDisableRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="sslVerifyOrder">
+            <input message="tns:sslVerifyOrderRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="sslPlaceOrder">
+            <input message="tns:sslVerifyOrderRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="sslCheckOrder">
+            <input message="tns:sslCheckOrderRequest"/>
+            <output message="tns:sslCheckOrderResponse"/>
+        </operation>
+        <operation name="pricelist">
+            <input message="tns:pricelistRequest"/>
+            <output message="tns:pricelistResponse"/>
+        </operation>
+        <operation name="getCurrentPromos">
+            <input message="tns:getCurrentPromosRequest"/>
+            <output message="tns:getCurrentPromosResponse"/>
+        </operation>
+        <operation name="checkRAA">
+            <input message="tns:domainAuthinfoRequest"/>
+            <output message="tns:checkRAAResponse"/>
+        </operation>
+        <operation name="resendRAA">
+            <input message="tns:domainAuthinfoRequest"/>
+            <output message="tns:simpleResponse"/>
+        </operation>
+        <operation name="transfersList">
+            <input message="tns:transfersListRequest"/>
+            <output message="tns:transfersListResponse"/>
+        </operation>
+        <operation name="getDNSSECrecords">
+            <input message="tns:getDNSSECrecordsRequest"/>
+            <output message="tns:getDNSSECrecordsResponse"/>
+        </operation>
+        <operation name="addDNSSECrecord">
+            <input message="tns:addDNSSECrecordRequest"/>
+            <output message="tns:addDNSSECrecordResponse"/>
+        </operation>
+        <operation name="removeDNSSECrecord">
+            <input message="tns:removeDNSSECrecordRequest"/>
+            <output message="tns:removeDNSSECrecordResponse"/>
+        </operation>
+        <operation name="checkDomainReactivation">
+            <input message="tns:checkDomainReactivationRequest"/>
+            <output message="tns:checkDomainReactivationResponse"/>
+        </operation>
+        <operation name="poll">
+            <input message="tns:pollRequest"/>
+            <output message="tns:pollResponse"/>
+        </operation>
+        <operation name="checkDomainOrderStatus">
+            <input message="tns:checkDomainOrderStatusRequest"/>
+            <output message="tns:checkDomainOrderStatusResponse"/>
+        </operation>
+    </portType>
+    <binding name="DTVBinding" type="tns:DTVPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="checkDomain">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#checkDomain"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="checkDomainExtended">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#checkDomainExtended"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="transferDomain">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#transferDomain"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="transferFuture">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#transferFuture"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="domainInfo">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#domainInfo"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="contactInfo">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#contactInfo"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="hostCreate">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#hostCreate"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="foreignHostCreate">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#foreignHostCreate"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="hostInfo">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#hostInfo"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="hostUpdate">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#hostUpdate"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="registerDomain">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#registerDomain"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="changeDomainNameservers">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#changeDomainNameservers"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="domainCession">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#domainCession"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="domainRenew">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#domainRenew"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="accountBalance">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#accountBalance"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="lastOperations">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#lastOperations"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="domainGetAuthinfo">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#domainGetAuthinfo"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="getPrice">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#getPrice"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="futureGetAuthinfo">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#futureGetAuthinfo"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="futureCheck">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#futureCheck"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="futureInfo">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#futureInfo"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="futureCreate">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#futureCreate"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="checkRedirectionServer">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#checkRedirectionServer"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="activateRedirectionServer">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#activateRedirectionServer"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="activateParking">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#activateParking"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="deleteRedirectionServer">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#deleteRedirectionServer"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="getDomainDNSRecords">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#getDomainDNSRecords"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="setDomainDNSRecords">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#setDomainDNSRecords"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="getAllDomains">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#getAllDomains"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="contactUpdate">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#contactUpdate"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="idProtectPurchase">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#idProtectPurchase"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="idProtectRenew">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#idProtectRenew"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="registrarLockCheck">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#registrarLockCheck"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="registrarLockSet">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#registrarLockSet"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="registrarLockRemove">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#registrarLockRemove"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="idProtectCheckStatus">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#idProtectCheckStatus"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="idProtectEnable">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#idProtectEnable"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="idProtectDisable">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#idProtectDisable"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="sslVerifyOrder">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#sslVerifyOrder"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="sslPlaceOrder">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#sslPlaceOrder"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="sslCheckOrder">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#sslCheckOrder"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="pricelist">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#pricelist"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="getCurrentPromos">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#getCurrentPromos"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="checkRAA">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#checkRAA"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="resendRAA">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#resendRAA"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="transfersList">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#transfersList"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="getDNSSECrecords">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#getDNSSECrecords"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="addDNSSECrecord">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#addDNSSECrecord"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="removeDNSSECrecord">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#removeDNSSECrecord"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="checkDomainReactivation">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#checkDomainReactivation"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="poll">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#poll"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="checkDomainOrderStatus">
+            <soap:operation soapAction="urn:xmethods-delayed-quotes#checkDomainOrderStatus"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:xmethods-delayed-quotes" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="DomenyTvService">
+        <port name="DTVPort" binding="tns:DTVBinding">
+            <soap:address location="https://www.domeny.tv/regapi/soap.php"/>
+        </port>
+    </service>
+</definitions>
