@@ -8,6 +8,7 @@
         }
     ],
     "require": {
+        "ext-soap": "*",
         "artisaninweb/laravel-soap": "dev-master"
     },
     "extra": {
