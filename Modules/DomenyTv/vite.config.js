@@ -9,7 +9,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 copy: [
-                    { src: __dirname + '/soap.wdl.xml', dest: '../../public' }
+                    { src: __dirname + '/soap.wdl.xml', dest: '../../public/modules/domenytv' }
                 ]
             }
         }
