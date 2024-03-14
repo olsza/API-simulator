@@ -9,6 +9,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AccountBalanceTest extends TestCase
 {
+    const FILE_XML = 'soap.wdl.xml';
+
     /**
      * A basic feature test example.
      */
@@ -28,7 +30,19 @@ class AccountBalanceTest extends TestCase
 
     public function testReadSoapWdlXmlFile()
     {
-        $opcje = [
+        $client = $this->conectWithServerWdl();
+
+        $this->assertCount(52, $client->__getFunctions());
+    }
+
+    private function conectWithServerWdl(): SoapClient
+    {
+        return new SoapClient(route('api.domenytv') . "/" . self::FILE_XML, $this->optionToConectWdl());
+    }
+
+    private function optionToConectWdl()
+    {
+        return [
             'stream_context' => stream_context_create([
                 'ssl' => [
                     'verify_peer' => false,
@@ -37,9 +51,5 @@ class AccountBalanceTest extends TestCase
                 ]
             ])
         ];
-
-        $client = new SoapClient(route('api.domenytv') . "/soap.wdl.xml", $opcje);
-
-        $this->assertCount(52, $client->__getFunctions());
     }
 }
