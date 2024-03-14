@@ -35,6 +35,21 @@ class AccountBalanceTest extends TestCase
         $this->assertCount(52, $client->__getFunctions());
     }
 
+    public function testCheckIsAccountBalanceFunctionIsInSoapWdlXmlFile()
+    {
+        $client = $this->conectWithServerWdl();
+
+        $commandExists = false;
+        foreach ($client->__getFunctions() as $function) {
+            if (str_contains($function, 'accountBalance')) {
+                $commandExists = true;
+                break;
+            }
+        }
+
+        $this->assertTrue($commandExists);
+    }
+
     private function conectWithServerWdl(): SoapClient
     {
         return new SoapClient(route('api.domenytv') . "/" . self::FILE_XML, $this->optionToConectWdl());
