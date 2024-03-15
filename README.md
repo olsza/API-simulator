@@ -33,7 +33,7 @@ Pierwszy moduł dla API Simulator będzie tworzony właśnie na podstawie ich do
 
 Plany na przyszłość dla tego projektu Open Source obejmują dodanie modułów do symulowania interfejsów API od różnych dostawców.
 
-[Lista do zrobienia (ToDo)](TODO.md)
+[Lista do zrobienia](TODO.md)
 
 ## 🇺🇸 Contributing / 🇵🇱 Wnieś swój wkład
 
