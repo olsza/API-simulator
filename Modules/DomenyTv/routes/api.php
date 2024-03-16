@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Modules\DomenyTv\App\Http\Controllers\AccountBalanceController;
 
 /*
     |--------------------------------------------------------------------------
@@ -16,4 +14,3 @@ use Modules\DomenyTv\App\Http\Controllers\AccountBalanceController;
 */
 
 Route::get('domenytv', 'DomenyTvController@index')->prefix('modules')->name('api.domenytv');
-
