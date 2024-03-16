@@ -4,8 +4,6 @@ namespace Modules\DomenyTv\tests\Feature;
 
 use SoapClient;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AccountBalanceTest extends TestCase
 {
@@ -50,9 +48,12 @@ class AccountBalanceTest extends TestCase
         $this->assertTrue($commandExists);
     }
 
+    /**
+     * @throws \SoapFault
+     */
     private function conectWithServerWdl(): SoapClient
     {
-        return new SoapClient(route('api.domenytv') . "/" . self::FILE_XML, $this->optionToConectWdl());
+        return new SoapClient(route('api.domenytv').'/'.self::FILE_XML, $this->optionToConectWdl());
     }
 
     private function optionToConectWdl()
@@ -62,9 +63,9 @@ class AccountBalanceTest extends TestCase
                 'ssl' => [
                     'verify_peer' => false,
                     'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                ]
-            ])
+                    'allow_self_signed' => true,
+                ],
+            ]),
         ];
     }
 }
