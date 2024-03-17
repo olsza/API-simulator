@@ -66,6 +66,7 @@ class AccountBalanceTest extends TestCase
                     'allow_self_signed' => true,
                 ],
             ]),
+            'cache_wsdl' => WSDL_CACHE_NONE,
         ];
     }
 }
