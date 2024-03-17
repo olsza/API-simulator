@@ -28,14 +28,14 @@ class AccountBalanceTest extends TestCase
 
     public function testReadSoapWdlXmlFile()
     {
-        $client = $this->conectWithServerWdl();
+        $client = $this->connectWithServerWdl();
 
         $this->assertCount(52, $client->__getFunctions());
     }
 
     public function testCheckIsAccountBalanceFunctionIsInSoapWdlXmlFile()
     {
-        $client = $this->conectWithServerWdl();
+        $client = $this->connectWithServerWdl();
 
         $commandExists = false;
         foreach ($client->__getFunctions() as $function) {
@@ -51,12 +51,12 @@ class AccountBalanceTest extends TestCase
     /**
      * @throws \SoapFault
      */
-    private function conectWithServerWdl(): SoapClient
+    private function connectWithServerWdl(): SoapClient
     {
-        return new SoapClient(route('api.domenytv').'/'.self::FILE_XML, $this->optionToConectWdl());
+        return new SoapClient(route('api.domenytv').'/'.self::FILE_XML, $this->optionToConnectWdl());
     }
 
-    private function optionToConectWdl()
+    private function optionToConnectWdl()
     {
         return [
             'stream_context' => stream_context_create([
