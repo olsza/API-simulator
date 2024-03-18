@@ -6,13 +6,18 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class AccountBalanceRequest extends FormRequest
 {
+    protected string $llooggiinn;
+
+    protected string $password;
+
     /**
      * Get the validation rules that apply to the request.
      */
     public function rules(): array
     {
         return [
-            //
+            'login' => ['required', 'string'],
+            'password' => ['required', 'string'],
         ];
     }
 
@@ -21,6 +26,6 @@ class AccountBalanceRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 }
