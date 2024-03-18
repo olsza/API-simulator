@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        //        $this->mapWebRoutes();
+        $this->mapWebRoutes();
     }
 
     /**
@@ -51,7 +51,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes(): void
     {
-        Route::middleware('api')
+        Route::prefix('api')
+            ->middleware('api')
             ->namespace($this->moduleNamespace)
             ->group(module_path('DomenyTv', '/routes/api.php'));
     }
