@@ -3,60 +3,93 @@
 namespace Modules\DomenyTv\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Artisaninweb\SoapWrapper\SoapWrapper;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Modules\DomenyTv\App\Http\Requests\AccountBalanceRequest;
+use Modules\DomenyTv\App\Http\Resources\AccountBalanceResource;
 
 class DomenyTvController extends Controller
 {
-    public array $data = [];
+    /**
+     * @var SoapWrapper
+     */
+    protected $soapWrapper;
 
     /**
-     * Display a listing of the resource.
+     * SoapController constructor.
+     *
+     * @param SoapWrapper $soapWrapper
      */
-    public function index(): JsonResponse
+    public function __construct(SoapWrapper $soapWrapper)
     {
-        //
-
-        return response()->json($this->data);
+        $this->soapWrapper = $soapWrapper;
     }
 
+    public function index()
+    {
+        return $this->show();
+    }
     /**
-     * Store a newly created resource in storage.
+     * Use the SoapWrapper
      */
-    public function store(Request $request): JsonResponse
+    public function show()
     {
-        //
+        $this->soapWrapper->add('domtv', function ($service) {
+            $service
+                ->wsdl(route('domenytv.index') . '/soap.wdl.xml')
+                ->trace(true)
+                ->classmap([
+                    AccountBalanceRequest::class,
+                    AccountBalanceResource::class,
+//                    GetConversionAmount::class,
+//                    GetConversionAmountResponse::class,
+                ]);
+        });
 
-        return response()->json($this->data);
+
+
+        $response = $this->soapWrapper->call('domtv.accountBalanceResult');
+
+        dd($response ?? '+-+-+-','jalo');
+        exit;
     }
 
-    /**
-     * Show the specified resource.
-     */
-    public function show($id): JsonResponse
-    {
-        //
 
-        return response()->json($this->data);
-    }
+//    public array $data = [];
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id): JsonResponse
-    {
-        //
+//    /**
+//     * Display a listing of the resource.
+//     */
+//    public function index(): JsonResponse
+//    {
+//        //
+//
+//        return response()->json($this->data);
+//    }
 
-        return response()->json($this->data);
-    }
+//    public function index(Request $request, SoapWrapper $soapWrapper)
+//    {
+////        dd(route('api.domenytv') . '/soap.wdl.xml');
+//        // Pobierz zawartość pliku WSDL (np. z URL)
+//        $wsdl = file_get_contents(public_path() . '/modules/domenytv/soap.wdl.xml');
+////dd('ooo',$wsdl);
+//        // Dodaj dynamicznie pobrany plik WSDL do serwera SOAP
+//        $soapWrapper->add('dtv', function ($service) use ($wsdl) {
+//            $service->wsdl($wsdl);
+//        });
+////dd($soapWrapper);
+//        // Wywołaj metodę SOAP
+//        $response = $soapWrapper->call('dtv.accountBalance', [
+//            'login' => 'ggg',
+//            'password' => 'vvvv',
+//        ]);
+//
+//        // Przetwarzanie odpowiedzi...
+//
+//
+//        return response($response)->header('Content-Type', 'text/xml');
+//    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id): JsonResponse
-    {
-        //
 
-        return response()->json($this->data);
-    }
 }
