@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\DomenyTv\App\Http\Controllers\SoapController;
 
 /*
     |--------------------------------------------------------------------------
@@ -14,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('domenytv', 'DomenyTvController@index')->prefix('modules')->name('api.domenytv');
+Route::post('/soap', [SoapController::class, 'handle']);
