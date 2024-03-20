@@ -9,7 +9,9 @@
     ],
     "require": {
         "ext-soap": "*",
-        "artisaninweb/laravel-soap": "dev-master"
+        "artisaninweb/laravel-soap": "dev-master",
+        "php-soap/wsdl": "^1.8",
+        "php-soap/xml": "^1.6"
     },
     "extra": {
         "laravel": {
