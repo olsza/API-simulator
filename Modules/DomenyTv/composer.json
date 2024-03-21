@@ -11,7 +11,6 @@
         "ext-dom": "*",
         "ext-http": "*",
         "ext-soap": "*",
-        "artisaninweb/laravel-soap": "dev-master",
         "php-soap/wsdl": "^1.8",
         "php-soap/xml": "^1.6"
     },
