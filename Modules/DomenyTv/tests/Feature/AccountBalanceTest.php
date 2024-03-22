@@ -41,6 +41,7 @@ class AccountBalanceTest extends TestCase
         foreach ($client->__getFunctions() as $function) {
             if (str_contains($function, 'accountBalance')) {
                 $commandExists = true;
+
                 break;
             }
         }
@@ -53,7 +54,7 @@ class AccountBalanceTest extends TestCase
      */
     private function connectWithServerWdl(): SoapClient
     {
-        return new SoapClient(route('api.domenytv').'/'.self::FILE_XML, $this->optionToConnectWdl());
+        return new SoapClient(route('api.domenytv') . '/' . self::FILE_XML, $this->optionToConnectWdl());
     }
 
     private function optionToConnectWdl()

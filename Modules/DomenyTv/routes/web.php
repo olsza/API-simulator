@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Modules\DomenyTv\App\Http\Controllers\DomenyTvController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +10,3 @@ use Modules\DomenyTv\App\Http\Controllers\DomenyTvController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
