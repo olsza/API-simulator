@@ -3,93 +3,35 @@
 namespace Modules\DomenyTv\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Artisaninweb\SoapWrapper\SoapWrapper;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Modules\DomenyTv\App\Http\Requests\AccountBalanceRequest;
-use Modules\DomenyTv\App\Http\Resources\AccountBalanceResource;
+use SoapServer;
 
 class DomenyTvController extends Controller
 {
-    /**
-     * @var SoapWrapper
-     */
-    protected $soapWrapper;
-
-    /**
-     * SoapController constructor.
-     *
-     * @param SoapWrapper $soapWrapper
-     */
-    public function __construct(SoapWrapper $soapWrapper)
+    public function handle(Request $request)
     {
-        $this->soapWrapper = $soapWrapper;
+        $server = new SoapServer(null, array('uri' => "urn:xmethods-delayed-quotes"));
+//        $server = new SoapServer(public_path('/modules/domenytv/soap.wsdl.xml'));
+
+        // Define a class that supports SOAP operations
+        $server->setClass(SoapHandler::class);
+
+        // SOAP request
+        ob_start();
+        $server->handle($this->parseRequest($request->getContent()));
+//        $server->handle($request->getContent());
+        $response = ob_get_clean();
+
+        return response($response, 200)->header('Content-Type', 'text/xml');
     }
 
-    public function index()
+    // A helper method to parse the request by removing the level before the element in question.
+    private function parseRequest(bool|string|null $xmlRequest): string
     {
-        return $this->show();
+        if (strpos($xmlRequest, '<input>') !== false) {
+            // If there is an XML <input> and </input> in the request then remove from the body of the request
+            $xmlRequest = str_replace(['<input>', '</input>'], '', $xmlRequest);
+        }
+        return $xmlRequest;
     }
-    /**
-     * Use the SoapWrapper
-     */
-    public function show()
-    {
-        $this->soapWrapper->add('domtv', function ($service) {
-            $service
-                ->wsdl(route('domenytv.index') . '/soap.wdl.xml')
-                ->trace(true)
-                ->classmap([
-                    AccountBalanceRequest::class,
-                    AccountBalanceResource::class,
-//                    GetConversionAmount::class,
-//                    GetConversionAmountResponse::class,
-                ]);
-        });
-
-
-
-        $response = $this->soapWrapper->call('domtv.accountBalanceResult');
-
-        dd($response ?? '+-+-+-','jalo');
-        exit;
-    }
-
-
-//    public array $data = [];
-
-//    /**
-//     * Display a listing of the resource.
-//     */
-//    public function index(): JsonResponse
-//    {
-//        //
-//
-//        return response()->json($this->data);
-//    }
-
-//    public function index(Request $request, SoapWrapper $soapWrapper)
-//    {
-////        dd(route('api.domenytv') . '/soap.wdl.xml');
-//        // Pobierz zawartość pliku WSDL (np. z URL)
-//        $wsdl = file_get_contents(public_path() . '/modules/domenytv/soap.wdl.xml');
-////dd('ooo',$wsdl);
-//        // Dodaj dynamicznie pobrany plik WSDL do serwera SOAP
-//        $soapWrapper->add('dtv', function ($service) use ($wsdl) {
-//            $service->wsdl($wsdl);
-//        });
-////dd($soapWrapper);
-//        // Wywołaj metodę SOAP
-//        $response = $soapWrapper->call('dtv.accountBalance', [
-//            'login' => 'ggg',
-//            'password' => 'vvvv',
-//        ]);
-//
-//        // Przetwarzanie odpowiedzi...
-//
-//
-//        return response($response)->header('Content-Type', 'text/xml');
-//    }
-
-
 }
