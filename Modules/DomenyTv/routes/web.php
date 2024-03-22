@@ -14,6 +14,3 @@ use Modules\DomenyTv\App\Http\Controllers\DomenyTvController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('domenytv', DomenyTvController::class)->names('domenytv');
-});
