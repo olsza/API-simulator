@@ -12,17 +12,7 @@ class AccountBalanceTest extends TestCase
 
     public function test_good_value_balance()
     {
-        $body = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://localhost">
-                    <soapenv:Header/>
-                    <soapenv:Body>
-                        <ser:accountBalance>
-                            <input>
-                                <login>good_login</login>
-                                <password>good_pass</password>
-                            </input>
-                        </ser:accountBalance>
-                    </soapenv:Body>
-                </soapenv:Envelope>';
+        $body = $this->bodyXml('accountBalance');
 
         $response = $this->sendUrlPost($body);
 
@@ -64,5 +54,23 @@ class AccountBalanceTest extends TestCase
             'headers' => ['Content-Type' => 'text/xml'],
             'body' => $body,
         ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function bodyXml(string $commend, ?array $parameters = []): string
+    {
+        return '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://localhost">
+                    <soapenv:Header/>
+                    <soapenv:Body>
+                        <ser:' . $commend . '>
+                            <input>
+                                <login>good_login</login>
+                                <password>good_pass</password>
+                            </input>
+                        </ser:' . $commend . '>
+                    </soapenv:Body>
+                </soapenv:Envelope>';
     }
 }
