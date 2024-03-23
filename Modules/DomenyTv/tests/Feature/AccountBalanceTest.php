@@ -12,7 +12,7 @@ class AccountBalanceTest extends TestCase
 
     public function test_good_value_balance()
     {
-        $body = $this->bodyXml('accountBalance');
+        $body = $this->bodyXml('accountBalance', ['test' => 666]);
 
         $response = $this->sendUrlPost($body);
 
@@ -56,21 +56,29 @@ class AccountBalanceTest extends TestCase
         ]);
     }
 
-    /**
-     * @return string
-     */
     public function bodyXml(string $commend, ?array $parameters = []): string
     {
-        return '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://localhost">
+        if (! isset($parameters['login'])) {
+            $parameters['login'] = 'good_login';
+        }
+        if (! isset($parameters['password'])) {
+            $parameters['password'] = 'good_pass';
+        }
+
+        $xmlIn = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://localhost">
                     <soapenv:Header/>
                     <soapenv:Body>
                         <ser:' . $commend . '>
-                            <input>
-                                <login>good_login</login>
-                                <password>good_pass</password>
+                            <input>';
+        foreach ($parameters as $key => $value) {
+            $xmlIn .= "\n\t\t\t\t\t<$key>$value</$key>";
+        }
+        $xmlIn .= '
                             </input>
                         </ser:' . $commend . '>
                     </soapenv:Body>
                 </soapenv:Envelope>';
+
+        return $xmlIn;
     }
 }
