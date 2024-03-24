@@ -6,6 +6,10 @@ class SoapHandler
 {
     public function accountBalance($login, $password)
     {
+        if ($login !== 'good_login' && $password !== 'good_password') {
+            return ['result' => 27];
+        }
+
         return ['result' => 1000, 'balance' => (string) 3210.66]; // Let us assume that the balance is 3210.66
     }
 
