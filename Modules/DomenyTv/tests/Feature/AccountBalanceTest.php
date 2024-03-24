@@ -10,9 +10,40 @@ class AccountBalanceTest extends TestCase
 {
     private string $url = 'http://localhost/api/soap';
 
+    public function test_wrong_login_and_password()
+    {
+        $body = $this->bodyXml('accountBalance', ['login' => 'bad_login', 'password' => 'password']);
+
+        $response = $this->sendUrlPost($body);
+
+        $responseBody = $response->getBody()->getContents();
+
+        $expectedResponse = '<?xml version="1.0" encoding="UTF-8"?>
+                            <SOAP-ENV:Envelope
+                                xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                                xmlns:ns1="urn:xmethods-delayed-quotes"
+                                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                xmlns:ns2="http://xml.apache.org/xml-soap"
+                                xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                                <SOAP-ENV:Body>
+                                    <ns1:accountBalanceResponse>
+                                        <return xsi:type="ns2:Map">
+                                            <item>
+                                                <key xsi:type="xsd:string">result</key>
+                                                <value xsi:type="xsd:int">27</value>
+                                            </item>
+                                        </return>
+                                    </ns1:accountBalanceResponse>
+                                </SOAP-ENV:Body>
+                            </SOAP-ENV:Envelope>';
+
+        $this->assertXmlStringEqualsXmlString($expectedResponse, $responseBody);
+    }
+
     public function test_good_value_balance()
     {
-        $body = $this->bodyXml('accountBalance', ['test' => 666]);
+        $body = $this->bodyXml('accountBalance');
 
         $response = $this->sendUrlPost($body);
 
