@@ -11,6 +11,7 @@
         "ext-dom": "*",
         "ext-http": "*",
         "ext-soap": "*",
+        "symfony/http-foundation": "^6.4",
         "php-soap/wsdl": "^1.8",
         "php-soap/xml": "^1.6"
     },
