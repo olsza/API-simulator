@@ -13,6 +13,23 @@ class SoapHandler
         return ['result' => 1000, 'balance' => (string) 3210.66]; // Let us assume that the balance is 3210.66
     }
 
+    public function checkDomainExtended($login, $password, ...$part)
+    {
+        if ($login !== 'good_login' && $password !== 'good_password') {
+            return ['result' => 27];
+        }
+
+        if (! isset($part['domain'])) {
+            return ['result' => 16];
+        }
+
+        if (empty($part['domain'])) {
+            return ['result' => 1];
+        }
+
+        return ['result' => 1000, 'balance' => (string) 3210.66]; // Let us assume that the balance is 3210.66
+    }
+
     public function checkDomainDns($login, $password, $domain = null)
     {
         return ['result' => 1000, [
