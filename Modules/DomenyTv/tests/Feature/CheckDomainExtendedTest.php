@@ -41,6 +41,38 @@ class CheckDomainExtendedTest extends TestCase
         $this->assertXmlStringEqualsXmlString($expectedResponse, $responseBody);
     }
 
+    public function testWrongParameterIsEmpty(): void
+    {
+        $body = $this->bodyXml('checkDomainExtended', ['login' => 'good_login', 'password' => 'good_password', 'domain' => '']);
+
+        $response = $this->sendUrlPost($body);
+
+        $responseBody = $response->getBody()->getContents();
+
+        $expectedResponse = '<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ns1="urn:xmethods-delayed-quotes"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ns2="http://xml.apache.org/xml-soap"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<SOAP-ENV:Body>
+		<ns1:checkDomainExtendedResponse>
+			<result xsi:type="ns2:Map">
+				<item>
+					<key xsi:type="xsd:string">result</key>
+					<value xsi:type="xsd:int">1</value>
+				</item>
+			</result>
+		</ns1:checkDomainExtendedResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+';
+
+        $this->assertXmlStringEqualsXmlString($expectedResponse, $responseBody);
+    }
+
     /**
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
