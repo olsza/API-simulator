@@ -11,24 +11,30 @@ class DomenyTvController extends Controller
 {
     public function handle(Request $request)
     {
+        $soapHandler = new SoapHandler();
+
         $checkIp = $this->checkIp();
 
         if (! $checkIp) {
             $server = new SoapServer(null, ['uri' => 'urn:xmethods-delayed-quotes']);
-            //        $server = new SoapServer(public_path('/modules/domenytv/soap.wsdl.xml'));
-
-            // Define a class that supports SOAP operations
-            $server->setClass(SoapHandler::class);
-
-            // SOAP request
+            $server->setObject($soapHandler);
+//            $server = new SoapServer(null, ['uri' => 'urn:xmethods-delayed-quotes']);
+//            //        $server = new SoapServer(public_path('/modules/domenytv/soap.wsdl.xml'));
+//
+//            // Define a class that supports SOAP operations
+//            $server->setClass(SoapHandler::class);
+//
+//            // SOAP request
             ob_start();
-            $server->handle($this->parseRequest($request->getContent()));
-            //        $server->handle($request->getContent());
+            $server->handle();
+
+//            $server->handle($this->parseRequest($request->getContent()));
+//            //        $server->handle($request->getContent());
             $response = ob_get_clean();
         } else {
             $response = $checkIp;
         }
-
+//
         return response($response, 200)->header('Content-Type', 'text/xml');
     }
 
@@ -36,7 +42,6 @@ class DomenyTvController extends Controller
     private function parseRequest(bool | string | null $xmlRequest): string
     {
         if (strpos($xmlRequest, '<input>') !== false) {
-            // If there is an XML <input> and </input> in the request then remove from the body of the request
             $xmlRequest = str_replace(['<input>', '</input>'], '', $xmlRequest);
         }
 
